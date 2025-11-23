@@ -47,18 +47,18 @@ namespace Labb4GenericCollections
         {
             decimal sumPrice = 0;
             Console.WriteLine("Current Orders:");
-            Console.WriteLine("______________________");
 
             foreach (var order in orders)
             {
                 Console.WriteLine($"Order {order.OrderId} (Table {order.TableNumber}):");
-
+                Console.WriteLine("----------------------");
                 foreach (var item in order.OrderItems)
                 {
                     Console.WriteLine($"- {item.Name} - {item.Price} kr");
                     sumPrice += item.Price;
                 }
                 Console.WriteLine($"Total Sum of Price: {sumPrice}");
+                Console.WriteLine("----------------------");
                 Console.WriteLine("");
             }
         }
@@ -84,6 +84,7 @@ namespace Labb4GenericCollections
                 }
 
                 Console.WriteLine($"Total Sum of Price: {sumPrice} kr");
+                Console.WriteLine("----------------------");
                 Console.WriteLine("");
             }
             else
@@ -95,8 +96,17 @@ namespace Labb4GenericCollections
         //Skriver ut antalet beställningar i kön till konsolen.
         public void ShowOrderCount()
         {
-            Console.WriteLine($"Order Count: {orders.Count}");
-            Console.WriteLine("");
+            if(orders.Count > 0)
+            {
+                Console.WriteLine($"Order Count: {orders.Count}");
+                Console.WriteLine("");
+            }
+            else
+            {
+                Console.WriteLine("There are no orders :(");
+                Console.WriteLine("");
+            }
+            
         }
     }
 }

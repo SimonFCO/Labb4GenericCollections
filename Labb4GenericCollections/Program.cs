@@ -84,7 +84,7 @@ namespace Labb4GenericCollections
 
             //This is just a bunch of method spam that proves that my code works :D
             ElBulli.CreateOrder(order4);
-
+            Console.WriteLine("");
             ElBulli.ShowOrderCount();
 
             ElBulli.HandleOrder();
